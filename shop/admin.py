@@ -22,6 +22,6 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ('id',)
-    list_display = ("id", 'title', 'description')
+    list_display = ("id", 'title', 'description', 'parent')
     search_fields = ('title', 'id')
-    list_editable = ("title", 'description')
+    list_editable = ("title", 'description', 'parent')

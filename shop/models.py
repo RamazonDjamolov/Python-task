@@ -17,8 +17,8 @@ class Shop(models.Model):
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
-    description = models.OneToOneField('self', on_delete=models.SET_NULL, null=True, blank=True)
-    parent = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, related_name='children')
+    description = models.TextField(null=True, blank=True)
+    parent = models.ForeignKey('self', on_delete=models.SET_NULL, null=True,blank=True,  related_name='children')
 
     def __str__(self):
         return self.title
